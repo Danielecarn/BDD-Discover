@@ -1,8 +1,9 @@
 Quando('acesso a página principal da Starbugs') do
-    puts 'teste'
+    visit 'https://starbugs.vercel.app/'
 end
   
 Então('eu deve ver uma lista de cafés disponíveis') do
-    puts 'teste' 
+    products = all('.coffee-item')
+    expect(products.size).to be > 0
 end
   
