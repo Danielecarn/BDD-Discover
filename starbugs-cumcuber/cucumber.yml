@@ -1,1 +1,4 @@
-default: --publish-quiet
+default: --publish-quiet -f progress -f html -o logs/report.html 
+
+
+#bundle exec cucumber -f html -o logs/report.html -f pretty - executar com saída de logs
