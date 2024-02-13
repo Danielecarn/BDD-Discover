@@ -16,7 +16,7 @@ class CheckoutPage
         expect(delivery.text).to eql product[:delivery]
     end
 
-    def asser_total_price(total_price)
+    def assert_total_price(total_price)
         price = find('.total-price')
         expect(price.text).to eql total_price
     end
@@ -37,5 +37,15 @@ class CheckoutPage
 
     def submit
         click_on 'Confirmar pedido'
+    end
+
+    def set_discount(coupon_code)
+        find('input[placeholder="Código do cupom"]').set(coupon_code)
+        click_on 'Aplicar'
+    end
+
+    def assert_notice(text)
+        notice = find('.notice').text
+        expect(notice).to eql text
     end
 end

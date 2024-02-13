@@ -23,7 +23,7 @@ Então('devo ver a página de checkout com os detalhes do produto') do
 end
 
 Então('o valor total da compra deve ser de {string}') do |total_price|
-    @checkout.asser_total_price(total_price)
+    @checkout.assert_total_price(total_price)
 end
 
 Então('devo um popup informando que o produto está indisponível') do
